@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Розв'язок СЛАР методом Гауса</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+    <h2 class="text-left">Розв'язок СЛАР методом Гауса з вибором головного елемента</h2>
+    <div style="display: block;" class="row justify-content-left mt-5">
+        <p class="text-left">Тестовий приклад СЛАР (n = 4)</p>
+        <math class="mt-2" xmlns="http://www.w3.org/1998/Math/MathML">
+            <semantics>
+                <mrow>
+                    <mo fence="true">{</mo>
+                    <mtable rowspacing="0.36em" columnalign="left" columnspacing="1em">
+                        <mtr>
+                            <mtd>
+                                <mstyle scriptlevel="0" displaystyle="false">
+                                    <mrow>
+                                        <msub><mi>x</mi><mn>1</mn></msub><mo>−</mo><mn>4</mn><msub><mi>x</mi><mn>2</mn></msub><mo>−</mo><msub><mi>x</mi><mn>4</mn></msub><mo>=</mo><mn>6</mn>
+                                    </mrow>
+                                </mstyle>
+                            </mtd>
+                        </mtr>
+                        <mtr>
+                            <mtd>
+                                <mstyle scriptlevel="0" displaystyle="false">
+                                    <mrow>
+                                        <msub><mi>x</mi><mn>1</mn></msub><mo>+</mo><msub><mi>x</mi><mn>2</mn></msub><mo>+</mo><mn>2</mn><msub><mi>x</mi><mn>3</mn></msub><mo>+</mo><mn>3</mn><msub><mi>x</mi><mn>4</mn></msub><mo>=</mo><mo>−</mo><mn>1</mn>
+                                    </mrow>
+                                </mstyle>
+                            </mtd>
+                        </mtr>
+                        <mtr>
+                            <mtd>
+                                <mstyle scriptlevel="0" displaystyle="false">
+                                    <mrow>
+                                        <mn>2</mn><msub><mi>x</mi><mn>1</mn></msub><mo>+</mo><mn>3</mn><msub><mi>x</mi><mn>2</mn></msub><mo>−</mo><msub><mi>x</mi><mn>3</mn></msub><mo>−</mo><msub><mi>x</mi><mn>4</mn></msub><mo>=</mo><mo>−</mo><mn>1</mn>
+                                    </mrow>
+                                </mstyle>
+                            </mtd>
+                        </mtr>
+                        <mtr>
+                            <mtd>
+                                <mstyle scriptlevel="0" displaystyle="false">
+                                    <mrow>
+                                        <msub><mi>x</mi><mn>1</mn></msub><mo>+</mo><mn>2</mn><msub><mi>x</mi><mn>2</mn></msub><mo>+</mo><mn>3</mn><msub><mi>x</mi><mn>3</mn></msub><mo>−</mo><msub><mi>x</mi><mn>4</mn></msub><mo>=</mo><mn>3</mn>
+                                    </mrow>
+                                </mstyle>
+                            </mtd>
+                        </mtr>
+                    </mtable>
+                </mrow>
+
+                <annotation encoding="application/x-tex">\begin{cases}
+                    x_1 - 4x_2 - x_4 = 6 \\
+                    x_1 + x_2 + 2x_3 + 3x_4 = -1 \\
+                    2x_1 + 3x_2 - x_3 - x_4 = -1 \\
+                    x_1 + 2x_2 + 3x_3 - x_4 = 3
+                    \end{cases}
+                </annotation>
+            </semantics>
+        </math>
+    </div>
+
+    <div class="mt-5">
+        <p class="text-left">Матриця коефіцієнтів системи та вільних членів</p>
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+        <div style="display: inline-block;">
+            \[ A = \begin{pmatrix}
+            1 & -4 & 0 & -1 \\
+            1 & 1 & 2 & 3 \\
+            2 & 3 & -1 & -1 \\
+            1 & 2 & 3 & -1
+            \end{pmatrix} \]
+        </div>
+
+        <div class="ml-5" style="display: inline-block;">
+            \[ B = \begin{pmatrix} 6,5 \\ -1 \\ -1 \\ 3 \end{pmatrix} \]
+        </div>
+    </div>
+
+    <div class="mt-5">
+        <p class="text-left">Результат</p>
+        <div class="ml-5" style="display: inline-block;">
+            <span th:text="'\[ X = \begin{pmatrix} ' + ${x[0]}+ ' \\ ' + ${x[1]} + ' \\ ' + ${x[2]} + ' \\ ' + ${x[3]} + ' \end{pmatrix} \]'" />
+        </div>
+    </div>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
